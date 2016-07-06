@@ -1,0 +1,64 @@
+<html>
+<head>
+
+<style>
+#gavinPlay{
+	/* background:color url x y repeat 图片来自百度图片，按需要更换 */
+	background:url("img_05.png") center no-repeat;
+	/* background-size:auto auto || cover 代表以宽或高填满元素背景 */
+	background-size:cover;
+	/* 随便设置宽高值，测试 */
+	width:200px;
+	height:200px;
+}
+.anim{
+	/* 设置默认样式，开启3d硬件加速 */
+	-webkit-transform:translate3d(0,0,0);
+	-moz-transform:translate3d(0,0,0);
+	transform:translate3d(0,0,0);
+	/* 设置动画，animation:动画名称 动画播放时长单位秒或微秒 动画播放的速度曲线linear为匀速 动画播放次数infinite为循环播放; */
+	-webkit-animation:play 0.5s linear 3;
+	-moz-animation:play 0.5s linear 3;
+	animation:play 0.5s linear 3;	
+}
+@-webkit-keyframes play{
+	0%  {
+		-webkit-transform:rotate(0deg);
+	}
+	100% {
+		-webkit-transform:rotate(-360deg);
+	}
+}
+@-moz-keyframes play{
+	0%  {
+		-moz-transform:rotate(0deg);
+	}
+	100% {
+		-moz-transform:rotate(-360deg);
+}
+@keyframes play{
+	0%  {
+		transform:rotate(0deg);
+	}
+	100% {
+		transform:rotate(-360deg);
+	}
+}
+</style>
+<script src='http://7nj1p4.com2.z0.glb.qiniucdn.com/jquery-1.11.1.min.js'></script>
+</head>
+<body>
+<div id="gavinPlay" ></div>
+<button>button</button>
+<script>
+	$('button').click(function(){
+		// $('#gravinPlay').addClass('anim');
+		$('#gavinPlay').addClass('anim')
+		setTimeout(function(){
+			$('#gavinPlay').removeClass('anim')
+		}, 1500);
+		 // $("p:first").addClass("intro");
+	})
+</script>
+</body>
+</html>
